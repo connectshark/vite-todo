@@ -23,7 +23,7 @@ export default {
 </script>
 
 <template>
-  <div
+  <li
     class="mx-auto w-4/5 bg-white rounded-2xl p-4 mb-4 transition hover:shadow-lg shadow-slate-400 flex items-center"
   >
     <div
@@ -43,5 +43,5 @@ export default {
     >
       <i class="bx bx-x-circle"></i>
     </p>
-  </div>
+  </li>
 </template>

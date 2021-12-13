@@ -8,6 +8,9 @@ store.init()
 const userContent = ref('')
 
 const enterContent = () => {
+  if (userContent.value === '') {
+    return
+  }
   store.addList(userContent.value)
   userContent.value = ''
 }
@@ -23,27 +26,13 @@ const enterContent = () => {
       class="transition text-gray-900 block mx-auto p-3 text-2xl rounded-lg shadow-lg w-5/6 border border-transparent focus:outline-none focus:ring-4 focus:ring-indigo-600 focus:border-transparent"
     />
   </main>
-  <ul class="max-w-screen-sm mx-auto">
-    <transition-group name="list" tag="li">
-      <listItem
-        v-for="item in store.filterState"
-        :key="item.id"
-        :content="item.content"
-        :checked="item.checked"
-        :id="item.id"
-      />
-    </transition-group>
-  </ul>
+  <transition-group appear="true" name="list" class="max-w-screen-sm mx-auto" tag="ul">
+    <listItem
+      v-for="item in store.filterState"
+      :key="item.id"
+      :content="item.content"
+      :checked="item.checked"
+      :id="item.id"
+    />
+  </transition-group>
 </template>
-
-<style>
-.list-enter-active,
-.list-leave-active {
-  transition: all 1s ease;
-}
-.list-enter-from,
-.list-leave-to {
-  opacity: 0;
-  transform: translateX(-30px);
-}
-</style>
