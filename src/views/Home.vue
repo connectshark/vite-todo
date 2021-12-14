@@ -1,5 +1,6 @@
 <script setup>
 import { ref } from 'vue'
+import headerWrapperVue from '../components/headerWrapper.vue'
 import listItem from '../components/listItem.vue'
 import { useToDoStore } from '../stores/todo'
 const store = useToDoStore()
@@ -17,6 +18,7 @@ const enterContent = () => {
 </script>
 
 <template>
+<headerWrapperVue/>
   <main class="py-4 max-w-screen-sm mx-auto">
     <input
       type="text"

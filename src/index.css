@@ -3,6 +3,9 @@
 @tailwind utilities;
 
 
+#app{
+  font-family: 'Roboto Mono', monospace, 'openhuninn', 'Noto Sans TC', sans-serif;
+}
 .list-enter-active,
 .list-leave-active {
   transition: all .5s ease;
